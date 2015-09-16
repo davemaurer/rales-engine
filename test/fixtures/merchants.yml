@@ -2,12 +2,18 @@
 
 merchant_one:
   id: 1
-  name: Merchant-oNe
+  name: merchant_one
   created_at: 2015-09-14 18:26:55
   updated_at: 2015-09-14 18:26:55
 
 merchant_two:
   id: 2
-  name: merCant TwO
+  name: merchant_two
+  created_at: 2015-09-14 18:26:55
+  updated_at: 2015-09-14 18:26:55
+
+merchant_three:
+  id: 3
+  name: merchant_one
   created_at: 2015-09-14 18:26:55
   updated_at: 2015-09-14 18:26:55

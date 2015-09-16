@@ -34,9 +34,6 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   def find_params
-    cap_params = params.permit(:id, :name, :created_at, :updated_at)
-    cap_params['name'] &&= params['name']
-    cap_params
+    params.permit(:id, :name, :created_at, :updated_at)
   end
 end
-# .split.map(&:capitalize).join(' ').split('-').map(&:titleize).join('-')
