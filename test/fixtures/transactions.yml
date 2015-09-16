@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  credit_card_number: MyString
-  result: MyString
-  invoice_id: 
+transaction_one:
+  id: 1
+  credit_card_number: 1234567890123456
+  result: success
+  invoice_id: 10
   created_at: 2015-09-14 18:34:56
   updated_at: 2015-09-14 18:34:56
 
-two:
-  credit_card_number: MyString
-  result: MyString
-  invoice_id: 
+transaction_two:
+  id: 2
+  credit_card_number: 1212121212121212
+  result: failed
+  invoice_id: 20
   created_at: 2015-09-14 18:34:56
   updated_at: 2015-09-14 18:34:56

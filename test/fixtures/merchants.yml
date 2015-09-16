@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+merchant_one:
+  id: 1
+  name: Merchant-oNe
   created_at: 2015-09-14 18:26:55
   updated_at: 2015-09-14 18:26:55
 
-two:
-  name: MyString
+merchant_two:
+  id: 2
+  name: merCant TwO
   created_at: 2015-09-14 18:26:55
   updated_at: 2015-09-14 18:26:55

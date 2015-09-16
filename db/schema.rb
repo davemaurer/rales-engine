@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20150915133950) do
   create_table "invoice_items", force: :cascade do |t|
     t.integer  "item_id"
     t.integer  "invoice_id"
+    t.integer  "quantity"
     t.decimal  "unit_price"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "quantity"
   end
 
   add_index "invoice_items", ["invoice_id"], name: "index_invoice_items_on_invoice_id", using: :btree
