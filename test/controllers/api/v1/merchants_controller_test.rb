@@ -84,4 +84,22 @@ class Api::V1::MerchantsControllerTest < ActionController::TestCase
     assert_equal '1.99', item[:unit_price]
     assert_equal 1, item[:merchant_id]
   end
+
+  test '#favorite_customer' do
+    get :favorite_customer, format: :json, id: Merchant.first.id
+
+    favorite_customer = JSON.parse(response.body, symbolize_names: true)
+
+    assert_response :success
+    assert_equal 'one_first', favorite_customer[:first_name]
+    assert_equal 1, favorite_customer[:id]
+  end
+
+  test '#revenue' do
+    get :revenue, format: :json, id: Merchant.first.id
+
+    JSON.parse(response.body, symbolize_names: true)
+
+    assert_response :success
+  end
 end

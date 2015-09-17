@@ -15,4 +15,18 @@ class CustomerTest < ActiveSupport::TestCase
     assert_equal 1, customers(:customer_one).id
     refute_equal 3, customers(:customer_one).id
   end
+
+  test "customer is valid" do
+    customer = Customer.first
+
+    assert customer.valid?
+  end
+
+  test "customer is not valid with no first name" do
+    customer = Customer.first
+
+    customer.first_name = nil
+
+    refute customer.valid?
+  end
 end

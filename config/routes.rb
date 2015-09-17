@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'customers/find_all', to: 'customers#find_all'
       get 'customers/:id/invoices', to: 'customers#invoices'
       get 'customers/:id/transactions', to: 'customers#transactions'
+      get 'customers/:id/favorite_merchant', to: 'customers#favorite_merchant'
 
       resources :customers, except: [:new, :edit]
 
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
       get 'merchants/:id/items', to: 'merchants#items'
       get 'merchants/:id/invoices', to: 'merchants#invoices'
       get 'merchants/:id/revenue', to: 'merchants#revenue'
+      get 'merchants/:id/favorite_customer', to: 'merchants#favorite_customer'
 
       resources :merchants, except: [:new, :edit] do
         resources :items, only: :show

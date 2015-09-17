@@ -8,7 +8,7 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   def random
-    respond_with Merchant.all.sample
+    respond_with Merchant.all.limit(1).order('RANDOM()')
   end
 
   def find
@@ -25,6 +25,14 @@ class Api::V1::MerchantsController < ApplicationController
 
   def invoices
     respond_with merchant.invoices
+  end
+
+  def revenue
+    respond_with merchant.total_revenue
+  end
+
+  def favorite_customer
+    respond_with merchant.favorite_customer
   end
 
   private

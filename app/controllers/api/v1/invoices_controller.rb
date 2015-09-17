@@ -8,7 +8,7 @@ class Api::V1::InvoicesController < ApplicationController
   end
 
   def random
-    respond_with Invoice.all.sample
+    respond_with Invoice.limit(1).order('RANDOM()')
   end
 
   def find

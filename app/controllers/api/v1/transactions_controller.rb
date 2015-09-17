@@ -8,7 +8,7 @@ class Api::V1::TransactionsController < ApplicationController
   end
 
   def random
-    respond_with Transaction.all.sample
+    respond_with Transaction.limit(1).order('RANDOM()')
   end
 
   def find

@@ -8,7 +8,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def random
-    respond_with Item.all.sample
+    respond_with Item.limit(1).order('RANDOM()')
   end
 
   def find

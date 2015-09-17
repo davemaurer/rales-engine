@@ -93,4 +93,14 @@ class Api::V1::CustomersControllerTest < ActionController::TestCase
     assert_equal '1234567890123456', transaction[:credit_card_number]
     assert_equal 'success', transaction[:result]
   end
+
+  test '#favorite_merchant' do
+    get :favorite_merchant, format: :json, id: Customer.first.id
+
+    favorite = JSON.parse(response.body, symbolize_names: true)
+
+    assert_response :success
+    assert_equal 'merchant_one', favorite[:name]
+    assert_equal 1, favorite[:id]
+  end
 end

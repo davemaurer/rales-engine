@@ -8,7 +8,7 @@ class Api::V1::CustomersController < ApplicationController
   end
 
   def random
-    respond_with Customer.all.sample
+    respond_with Customer.limit(1).order('RANDOM()')
   end
 
   def find
@@ -27,6 +27,10 @@ class Api::V1::CustomersController < ApplicationController
     respond_with customer.transactions
   end
 
+  def favorite_merchant
+    respond_with customer.favorite_merchant
+  end
+
   private
 
   def customer
@@ -37,7 +41,3 @@ class Api::V1::CustomersController < ApplicationController
     params.permit(:id, :first_name, :last_name, :created_at, :updated_at)
   end
 end
-
-# cap_params['first_name'] &&= cap_params['first_name'].capitalize
-# cap_params['last_name'] &&= cap_params['last_name'].capitalize
-# cap_params
